@@ -1,25 +1,27 @@
 // Q16: Write a program to input three numbers and find the largest among them using if–else.
 
-#include <iostream>
-using namespace std;
+#include <stdio.h>
 
 int main() {
-    double num1, num2, num3;
+    int num1, num2, num3;
 
-    // Prompt user for three numbers
-    cout << "Enter three numbers: ";
-    cin >> num1 >> num2 >> num3;
+    // Prompt the user to enter three numbers
+    printf("Enter three numbers: ");
+    scanf("%d %d %d", &num1, &num2, &num3);
 
-    // Compare numbers using nested if-else logic
+    // Check if num1 is the largest
     if (num1 >= num2 && num1 >= num3) {
-        cout << "Largest is " << num1 << endl;
-    } 
+        printf("Largest is %d\n", num1);
+    }
+    // Check if num2 is the largest
     else if (num2 >= num1 && num2 >= num3) {
-        cout << "Largest is " << num2 << endl;
-    } 
+        printf("Largest is %d\n", num2);
+    }
+    // If neither num1 nor num2 is the largest, then num3 must be the largest
     else {
-        cout << "Largest is " << num3 << endl;
+        printf("Largest is %d\n", num3);
     }
 
     return 0;
 }
+
