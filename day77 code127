@@ -1,0 +1,46 @@
+#include <stdio.h>
+
+int main()
+{
+    FILE *input, *output;
+    char ch;
+
+    // Open input file in read mode
+    input = fopen("input.txt", "r");
+
+    if(input == NULL)
+    {
+        printf("Error: input.txt does not exist!");
+        return 1;
+    }
+
+    // Open output file in write mode
+    output = fopen("output.txt", "w");
+
+    if(output == NULL)
+    {
+        printf("Error creating output.txt!");
+        fclose(input);
+        return 1;
+    }
+
+    // Read character by character
+    while((ch = fgetc(input)) != EOF)
+    {
+        // Convert lowercase to uppercase
+        if(ch >= 'a' && ch <= 'z')
+        {
+            ch = ch - 32;
+        }
+
+        // Write character to output file
+        fputc(ch, output);
+    }
+
+    fclose(input);
+    fclose(output);
+
+    printf("File converted successfully!");
+
+    return 0;
+}
