@@ -1,0 +1,47 @@
+#include <stdio.h>
+
+int main()
+{
+    enum Month
+    {
+        JAN = 1,
+        FEB,
+        MAR,
+        APR,
+        MAY,
+        JUN,
+        JUL,
+        AUG,
+        SEP,
+        OCT,
+        NOV,
+        DEC
+    };
+
+    int month;
+
+    printf("Enter month number (1-12): ");
+    scanf("%d", &month);
+
+    if(month == JAN || month == MAR || month == MAY ||
+       month == JUL || month == AUG || month == OCT ||
+       month == DEC)
+    {
+        printf("31 days");
+    }
+    else if(month == APR || month == JUN ||
+            month == SEP || month == NOV)
+    {
+        printf("30 days");
+    }
+    else if(month == FEB)
+    {
+        printf("28 or 29 days");
+    }
+    else
+    {
+        printf("Invalid month");
+    }
+
+    return 0;
+}
